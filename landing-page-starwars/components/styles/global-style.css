@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 2rem 0;
+  font-family: Poppins;
+  color: white;
+  background: #000000;
+  --gap: 5em;
+  --line: 1px;
+  --color: rgba(255, 255, 255, 0.2);
+  background-image: linear-gradient(
+      -90deg,
+      transparent calc(var(--gap) - var(--line)),
+      var(--color) calc(var(--gap) - var(--line) + 1px),
+      var(--color) var(--gap)
+    ),
+    linear-gradient(
+      0deg,
+      transparent calc(var(--gap) - var(--line)),
+      var(--color) calc(var(--gap) - var(--line) + 1px),
+      var(--color) var(--gap)
+    );
+  background-size: var(--gap) var(--gap);
+}
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+header figure {
+  cursor: pointer;
+  filter: drop-shadow(0px 0px 3px rgb(255, 239, 9));
+}
+ul {
+  list-style: none;
+  margin: 0 auto;
+  text-align: center;
+}
+header ul li {
+  display: inline-block;
+  margin: 2rem;
+}
+header ul li a {
+  text-decoration: none;
+  color: rgb(88, 88, 88);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+  display: inline-block;
+  padding: 1rem;
+}
+header ul li a:hover {
+  color: white;
+  transform: scale(1.05);
+  transition: 0.3s all;
+}
+header button {
+  margin-right: 0.5rem;
+}
+a .button {
+  color: rgb(207, 195, 15);
+}
+.button {
+  cursor: pointer;
+  position: relative;
+  padding: 20px 34px;
+  font-size: 18px;
+  box-shadow: 0px 0px 3px rgb(207, 195, 15);
+  border: 2px solid rgb(207, 195, 15);
+  border-radius: 34px;
+  background-color: transparent;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: hidden;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 60px;
+  height: 60px;
+  border-radius: inherit;
+  scale: 0;
+  z-index: -1;
+  background-color: rgb(255, 239, 9);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.button:hover::before {
+  scale: 3;
+}
+
+.button:hover {
+  color: #212121;
+  scale: 1.1;
+  box-shadow: 0 0px 20px rgba(193, 163, 98, 0.4);
+}
+
+.button:active {
+  scale: 1;
+}
